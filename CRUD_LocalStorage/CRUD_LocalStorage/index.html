@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD con localStorage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+        <h1 class="text-center">Crud Pedidos</h1>
+
+        <form class="p-4 mt-3 border rounded bg-info shadow-sm">
+          <div class="mb-3">
+            <label class="form-label">Cliente</label>
+            <input type="text" class="cliente form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Producto</label>
+            <select class="producto form-select">
+              <option selected value="">Selecciona un Producto</option>
+              <option value="Hamburguesa">Hamburguesa</option>
+              <option value="Pizza">Pizza</option>
+              <option value="Chuzo">Chuzo</option>
+              <option value="Perro">Perro</option>
+              <option value="Burrito">Burrito</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Precio</label>
+            <input type="number" min="20000" class="precio form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Imagen</label>
+            <input type="url" class="imagen form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Observación</label>
+            <input type="text" class="observacion form-control">
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="button" class="btn-guardar btn btn-primary">Guardar pedido</button>
+            <button type="button" class="d-none btn-actualizar btn btn-success">Actualizar pedido</button>
+          </div>
+        </form>
+
+        <!-- BARRA DE BÚSQUEDA -->
+        <div class="input-group mt-4">
+          <input type="text" class="form-control filtro-cliente" placeholder="Buscar cliente por nombre">
+          <button class="btn btn-secondary btn-buscar" type="button">Buscar</button>
+          <button class="btn btn-outline-secondary btn-limpiar" type="button">Limpiar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLA DE RESULTADOS -->
+    <div class="row justify-content-center mt-4">
+      <div class="col-12 col-md-10">
+        <table class="table text-center table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" id="box-client">Cliente</th>
+              <th scope="col">Producto</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Imagen</th>
+              <th scope="col" id="box-description">Descripción</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="./Local_storage.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+
+</html>
